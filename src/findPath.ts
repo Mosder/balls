@@ -1,5 +1,13 @@
-import { Ball, Coord } from './Ball';
+import { Ball } from './Ball';
+import { Coord } from './interfaces';
 import { objEqual } from './other';
+/**
+ * Finds the shortest path between two tiles
+ * @param start Coordinates of the beggining
+ * @param end Coordinates of the end
+ * @param balls Array of every ball on the board - they are considered obstacles
+ * @returns If path exists: Array of coords of every step needed to get to the end. If not: Empty array
+ */
 function findPath(start: Coord, end: Coord, balls: Ball[]): Coord[] {
     let obstacles: Coord[] = [];
     for (let ball of balls) {
